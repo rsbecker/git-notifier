@@ -360,17 +360,12 @@ def generateMailHeader(subject, rev=None):
     else:
         date = ""
 
-    print >>out, """From: %s
-""" % (encodeHeader(sender))
+    print >>out, """From: %s\n""" % (encodeHeader(sender))
     for toaddress in Config.mailinglist .split(";") :
-	    print >>out, """To: %s
-""" % (encodeHeader(toaddress))
-    print >>out, """%s%sX-Git-Repository: %s
-X-Mailer: %s %s
+	    print >>out, """To: %s\n""" % (encodeHeader(toaddress))
+    print >>out, """%s%sX-Git-Repository: %s\nX-Mailer: %s (v%s)\n%s
 Subject: %s %s
-
-%s
-
+\n\n
 """ % (replyto, date, encodeHeader(repo),
        Name, VERSION, mailTag("Repository", repo),
        encodeHeader(emailprefix), encodeHeader(subject)),
