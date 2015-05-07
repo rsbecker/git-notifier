@@ -361,16 +361,17 @@ def generateMailHeader(subject, rev=None):
         date = ""
 
     print >>out, """From: %s
-To: %s
+""" % (encodeHeader(sender))
+    print """To: %s
 To: randy@heckskitchen.com
-Subject: %s %s
+""" % (encodeHeader(Config.mailinglist))
+    print """Subject: %s %s
 %s%sX-Git-Repository: %s
 X-Mailer: %s %s
 
 %s
 
-""" % (encodeHeader(sender), encodeHeader(Config.mailinglist),
-       encodeHeader(emailprefix), encodeHeader(subject),
+""" % (encodeHeader(emailprefix), encodeHeader(subject),
        replyto, date, encodeHeader(repo),
        Name, VERSION, mailTag("Repository", repo)),
 
