@@ -366,7 +366,7 @@ def generateMailHeader(subject, rev=None):
 	    print >>out, """To: %s
 	""" % (encodeHeader(toaddress))
     print >>out, """%s%sX-Git-Repository: %s
-X-Mailer: %s %s
+X-Mailer: %s
 Subject: %s %s
 
 %s
