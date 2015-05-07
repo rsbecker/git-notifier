@@ -362,10 +362,10 @@ def generateMailHeader(subject, rev=None):
 
     print >>out, """From: %s
 """ % (encodeHeader(sender))
-    print """To: %s
+    print >>>out, """To: %s
 To: randy@heckskitchen.com
 """ % (encodeHeader(Config.mailinglist))
-    print """Subject: %s %s
+    print >>>out, """Subject: %s %s
 %s%sX-Git-Repository: %s
 X-Mailer: %s %s
 
