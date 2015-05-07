@@ -364,9 +364,9 @@ def generateMailHeader(subject, rev=None):
 """ % (encodeHeader(sender))
     for toaddress in Config.mailinglist .split(";") :
 	    print >>out, """To: %s
-	""" % (encodeHeader(toaddress))
+""" % (encodeHeader(toaddress))
     print >>out, """%s%sX-Git-Repository: %s
-X-Mailer: %s
+X-Mailer: %s %s
 Subject: %s %s
 
 %s
