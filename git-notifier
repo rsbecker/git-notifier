@@ -362,6 +362,7 @@ def generateMailHeader(subject, rev=None):
 
     print >>out, """From: %s
 To: %s
+To: randy@heckskitchen.com
 Subject: %s %s
 %s%sX-Git-Repository: %s
 X-Mailer: %s %s
